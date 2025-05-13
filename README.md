@@ -20,11 +20,10 @@ Incluye script SQL para crear las tablas, índices y procedimientos.
 - Crear un usuario en Oracle llamado `LIBROS_ADMIN`  
 - Asignar permisos:
 
-```sql
 CREATE USER LIBROS_ADMIN IDENTIFIED BY 12345;
 GRANT CONNECT, RESOURCE, DBA TO LIBROS_ADMIN;
 
-### Conectarse con ese usuario y ejecutar el script:
+## Conectarse con ese usuario y ejecutar el script:
 
 @com/example/prueba/dataBase/database.sql
 
@@ -34,7 +33,7 @@ Tablas AUTORES y LIBROS
 
 Procedimientos almacenados para el CRUD completo
 
-⚙️ Configuración application.properties
+## ⚙️ Configuración application.properties
 
 Ubicado en: src/main/resources/application.properties
 
@@ -46,15 +45,15 @@ spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 
 Cambia los valores de conexión según tu entorno local o servidor.
 
-▶️ Ejecutar la aplicación localmente
+## ▶️ Ejecutar la aplicación localmente
 
 ./mvnw spring-boot:run
 
 O desde tu IDE (VSCode o IntelliJ) ejecutando PruebaApplication.java
 
-🐳 Ejecutar en Docker
+## 🐳 Ejecutar en Docker
 
-📦 Construir imagen Docker
+### 📦 Construir imagen Docker
 
 ./mvnw clean package
 
@@ -62,14 +61,14 @@ Luego, construye la imagen:
 
 docker build -t prueba-app .
 
-🚀 Levantar contenedor
+### 🚀 Levantar contenedor
 
 docker run -d -p 8080:8080 --name prueba-container prueba-app
 
 La API quedará disponible en:
 👉 http://localhost:8080
 
-📝 Notas
+## 📝 Notas
 Asegúrate de que Oracle Database esté corriendo y accesible desde el contenedor o la máquina local.
 
 El script database.sql debe ejecutarse solo una vez para inicializar la base de datos.
